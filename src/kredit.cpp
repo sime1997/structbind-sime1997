@@ -7,7 +7,7 @@ Kredit::Kredit(std::string nositelj,  std::string jamac,  double iznos, double k
     {
         
         strcpy(_valuta, valuta);
-        std::cout<<_osiguranje->broj;   
+        
     }
 
 

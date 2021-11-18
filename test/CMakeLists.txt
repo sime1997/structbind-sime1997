@@ -8,5 +8,5 @@ set_target_properties(utest
   )
 
 
-target_link_libraries(utest gtest_main fmt::fmt-header-only)
+target_link_libraries(utest gtest_main)
 add_test(NAME utest COMMAND utest)

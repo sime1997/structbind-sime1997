@@ -8,4 +8,3 @@ set_target_properties(structbind
   )
 
 
-target_link_libraries(structbind fmt::fmt-header-only)

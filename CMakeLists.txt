@@ -16,8 +16,6 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 
 FetchContent_MakeAvailable(googletest)
 
-# Možete izbaciti ako ne koristite. 
-find_package(fmt REQUIRED)
 
 add_subdirectory(src)
 add_subdirectory(test)

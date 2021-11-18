@@ -13,7 +13,7 @@ TEST(Kredit, Konstruktor){
     EXPECT_STREQ(kredit1.valuta(), "EUR");
     EXPECT_EQ(kredit1.osiguranje()->broj, 568);
 }
-
+/*
 TEST(Kredit, binding1){
     Osiguranje osig;
     osig.broj = 568;
@@ -133,3 +133,4 @@ TEST(Kredit, binding6){
     EXPECT_NE(kamata, 1.0); 
 
 }
+*/

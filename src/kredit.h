@@ -29,15 +29,13 @@ public:
     double  kamata() const{return _kamata;}
     double & kamata(){return _kamata;}
 
-    char* valuta()
-        {
-            return _valuta;
-        }
-     std::shared_ptr<Osiguranje> osiguranje()
-        {
-            return _osiguranje;
-        }
-   // TODO Vaše sučelje dolazi ovdje.
+    const char* valuta() const {return _valuta;}
+    char*  valuta() {return _valuta;}
+
+    std::shared_ptr<Osiguranje>  osiguranje() const
+        {return _osiguranje;}
+
+// TODO Vaše sučelje dolazi ovdje.
 template <std::size_t N> 
 friend decltype(auto) get(Kredit const &);
 
@@ -53,7 +51,7 @@ friend decltype(auto) get(Kredit &&);
 
 template <>
 struct std::tuple_size<Kredit>{
-    static constexpr int value =  4;
+    static constexpr int value =  6;
 };
 
 
@@ -79,7 +77,7 @@ template <>
 struct std::tuple_element<3, Kredit>{
      using type = double;
 };
-/*
+
 template <>
 struct std::tuple_element<4, Kredit>{
      using type = char*;
@@ -90,42 +88,37 @@ struct std::tuple_element<5,Kredit>{
     using type=std::shared_ptr<Osiguranje>;
 };
 
-*/
 
 
 template<std::size_t N>
 inline decltype(auto) get(Kredit & objekt){
-    //std::cout<<"&";
      if      constexpr(N == 0) return objekt.nositelj();
      else if constexpr(N == 1) return objekt.jamac();
      else if constexpr(N == 2) return objekt.iznos();
      else if constexpr(N == 3) return objekt.kamata();
-     /*else if constexpr(N == 4) return objekt.kamata();
-     else if constexpr(N == 5) return objekt.osiguranje();*/
-
+     else if constexpr(N == 4) return objekt.valuta();
+     else if constexpr(N == 5) return objekt.osiguranje();
 }
 
 template<std::size_t N>
 inline decltype(auto) get(Kredit const & objekt){
-    //std::cout<<"const";
      if      constexpr(N == 0) return objekt.nositelj();
      else if constexpr(N == 1) return objekt.jamac();
      else if constexpr(N == 2) return objekt.iznos();
      else if constexpr(N == 3) return objekt.kamata();
-     /*else if constexpr(N == 4) return objekt.kamata();
-     else if constexpr(N == 5) return objekt.osiguranje();*/
+     else if constexpr(N == 4) return objekt.valuta();
+     else if constexpr(N == 5) return objekt.osiguranje();
 
 }
 
 
 template<std::size_t N>
 inline decltype(auto) get(Kredit && objekt){
-    //std::cout<<"&&";
      if      constexpr(N == 0) return objekt.nositelj();
      else if constexpr(N == 1) return objekt.jamac();
      else if constexpr(N == 2) return objekt.iznos();
      else if constexpr(N == 3) return objekt.kamata();
-     /*else if constexpr(N == 4) return objekt.kamata();
-     else if constexpr(N == 5) return objekt.osiguranje();*/
+     else if constexpr(N == 4) return objekt.valuta();
+     else if constexpr(N == 5) return objekt.osiguranje();
 
 }

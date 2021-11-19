@@ -113,8 +113,8 @@ TEST(Kredit, binding5){
     EXPECT_NE(kamata, 1.0); 
 
 }
-/*
 
+/*
 TEST(Kredit, binding6){
     Osiguranje osig;
     osig.broj = 1568;
@@ -132,5 +132,4 @@ TEST(Kredit, binding6){
     kredit.kamata() = 1.0;
     EXPECT_NE(kamata, 1.0); 
 
-}
-*/
+}*/

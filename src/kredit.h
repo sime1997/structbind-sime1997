@@ -1,6 +1,7 @@
 #pragma once
 #include<iostream>
 #include<memory>
+
 struct Osiguranje{
      long broj;
 };
@@ -29,7 +30,7 @@ public:
     double  kamata() const{return _kamata;}
     double & kamata(){return _kamata;}
 
-    const char* valuta() const {return _valuta;}
+    const char*  valuta() const{return _valuta;}
     char*  valuta() {return _valuta;}
 
     std::shared_ptr<Osiguranje>  osiguranje() const

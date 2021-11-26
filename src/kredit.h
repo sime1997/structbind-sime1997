@@ -35,7 +35,7 @@ public:
 
     std::shared_ptr<Osiguranje>  osiguranje() const
         {return _osiguranje;}
-
+/*   OVE DEKLARACIJE  NISU POTREBNE JER NE KORISTITE PRIVATNE METODE NITI NE SPECIJALIZIRATE PREDLOŠKE. 
 // TODO Vaše sučelje dolazi ovdje.
 template <std::size_t N> 
 friend decltype(auto) get(Kredit const &);
@@ -45,6 +45,7 @@ friend decltype(auto) get(Kredit &);
 
 template <std::size_t N> 
 friend decltype(auto) get(Kredit &&);
+*/
 };
 
 // TODO Vaša implementacija dolazi ovdje
